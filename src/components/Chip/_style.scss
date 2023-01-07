@@ -1,0 +1,42 @@
+.chip {
+  position: relative;
+  display: inline-block;
+  font-weight: 450;
+  line-height: $btn-line-height;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  // height: 1.5rem;
+  padding: 0px 0.5rem;
+  background-image: none;
+  border: $btn-border-width solid transparent;
+  // border: $btn-border-width solid transparent;
+  @include chip-style($primary, $primary, $white)
+}
+.chip-lg {
+  @include chip-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+
+.chip-sm {
+  @include chip-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+.chip-primary {
+  @include chip-style($primary, $primary, $white);
+}
+.chip-success {
+  @include chip-style($success, $success, $white);
+}
+.chip-warning {
+  @include chip-style($warning, $warning, $white);
+}
+
+.chip-danger {
+  @include chip-style($danger, $danger, $white);
+}
+
+.chip-default {
+  @include chip-style($white, $gray-400, $body-color, $white, $primary, $primary);
+}
