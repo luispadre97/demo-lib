@@ -43,7 +43,7 @@ const SubMenu:React.FC<SubMenuProps>=({index,title,className,children})=>{
         onMouseLeave: (e: React.MouseEvent) => { handleMouse(e, false)}
       } : {}
     const renderChildren=()=>{
-        const subMenuClasses=classNames('viking-submenu',{
+        const subMenuClasses=classNames('gapsi-submenu',{
             'menu-opened':menuOpen
         })
         const childrenComponent=React.Children.map(children,(child,i)=>{

@@ -10,7 +10,7 @@ export interface TableProps{
 export const Table:FC<TableProps>=(props)=>{
   const { className } = props
 
-  const classes = classNames('viking-menu', className, {
+  const classes = classNames('gapsi-menu', className, {
     // 'menu-vertical': mode === 'vertical',
     // 'menu-horizontal': mode!=='vertical',
 })

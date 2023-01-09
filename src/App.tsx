@@ -13,6 +13,11 @@ import TabItem from "./components/Tabs/tabItem"
 import { Chip } from "./components/Chip/chip"
 import { Empty } from "./components/Empty/empty "
 import { Text } from "./components/Text/text"
+import { Columns } from "./components/Columns/colums"
+import { Column } from "./components/Columns/column"
+// import "bulma/css/bulma.min.css"
+import { Columns as ColumnsBulma } from "react-bulma-components"
+import { Input } from "./components/Input/input"
 
 library.add(fas)
 
@@ -20,18 +25,159 @@ const App: React.FC = () => {
 	const [show, setShow] = useState(false)
 	return (
 		<div className="App">
-			<Text text="title" type="title" className={"is-1"}/>
-			<Text text="subtitle" type="subtitle"/>
+
+<Column className="is-7">
+<Input  append={"x"}/>
+<Input
+    placeholder="disabled input"
+    disabled 
+  />
+<Input
+      defaultValue="large size"
+      size="lg"
+    />
+    <Input
+      placeholder="small size"
+      size="sm"
+    />
+<Input
+    placeholder="input with icon"
+    icon="search"
+  />  
+	    <Input
+      defaultValue="prepend text"
+      prepend="https://"
+    />
+    <Input
+      defaultValue="google"
+      append=".com"
+    />
+</Column>
 			<br/>
-			<Empty/>
-			<br/>
-			<Chip text="primary" status="primary" ></Chip>
-			<Chip text="default" status="default" ></Chip>
-			<Chip text="danger" status="danger" ></Chip>
-			<Chip text="warning" status="warning" ></Chip>
-			<Chip text="success" status="success" ></Chip>
-			
-			<br/>
+			<ColumnsBulma>
+				<ColumnsBulma.Column
+					style={{ background: "purple", color: "white" }}
+					size={4}
+				>
+					df
+				</ColumnsBulma.Column>
+				<ColumnsBulma.Column>df</ColumnsBulma.Column>
+			</ColumnsBulma>
+			<Columns>
+				<Column className="is-1" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+			<Columns>
+				<Column className="is-2" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+
+			<Columns>
+				<Column className="is-3" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+
+			<Columns>
+				<Column className="is-4" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+			<Columns>
+				<Column className="is-5" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+
+			<Columns>
+				<Column className="is-6" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+
+			<Columns>
+				<Column className="is-7" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+			<Columns>
+				<Column className="is-8" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+
+			<Columns>
+				<Column className="is-9" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+			<Columns>
+				<Column className="is-10" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+			<Columns>
+				<Column className="is-11" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+			<Columns>
+				<Column className="is-12" style={{ background: "blue" }}>
+					as
+				</Column>
+				<Column style={{ background: "orange" }}>as</Column>
+			</Columns>
+
+			<Columns>
+				<Column className="is-1">prueba</Column>
+				<Column className="is-4">prueba</Column>
+				<Column className="is-7">prueba</Column>
+				<Column className="is-1">prueba</Column>
+				<Column>prueba</Column>
+			</Columns>
+			<br />
+
+			<Columns>
+				<Column className="is-full" style={{ background: "red" }}>
+					as
+				</Column>
+				<Column style={{ background: "blue" }}>as</Column>
+				<Column style={{ background: "blue" }}>as</Column>
+				<Column style={{ background: "blue" }}>as</Column>
+				<Column style={{ background: "blue" }}>as</Column>
+				<Column style={{ background: "blue" }}>as</Column>
+				<Column style={{ background: "blue" }}>as</Column>
+			</Columns>
+			<br />
+			<Text text="title" type="title" className={"is-1"} />
+			<Text text="subtitle" type="subtitle" />
+			<br />
+			<Empty />
+			<Empty  description="No hay datos"/>
+			<Empty imageStyle={{
+      height: 60,
+    }} image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"  description="No hay datos"/>
+			<br />
+			<Chip text="primary" status="primary"></Chip>
+			<Chip text="default" status="default"></Chip>
+			<Chip text="danger" status="danger"></Chip>
+			<Chip text="warning" status="warning"></Chip>
+			<Chip text="success" status="success"></Chip>
+
+			<br />
 			<Button>sdf</Button>
 			<Icon icon="coffee" theme="primary" size="10x" />
 			<Menu

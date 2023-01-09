@@ -1,16 +1,16 @@
 import React, { FC } from "react"
 
 export interface TabItemProps {
-	/** Tab选项上面的文字 */
+/** El texto arriba de la opción Tabulador */
 	label: string | React.ReactElement
-	/** Tab选项是否被禁用 */
+/** La opción de pestaña está deshabilitada */
 	disabled?: boolean
 
 	children?: React.ReactNode
 }
 
 export const TabItem: FC<TabItemProps> = ({ children }) => {
-	return <div className="viking-tab-panel">{children}</div>
+	return <div className="gapsi-tab-panel">{children}</div>
 }
 
 export default TabItem

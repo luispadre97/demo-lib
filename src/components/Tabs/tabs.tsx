@@ -2,26 +2,24 @@ import React, { FC, useState, FunctionComponentElement } from "react"
 import classNames from "classnames"
 import { TabItemProps } from "./tabItem"
 export interface TabsProps {
-	/**当前激活 tab 面板的 index，默认为0 */
+/**El índice del panel de pestañas actualmente activo, el valor predeterminado es 0 */
 	defaultIndex?: number
-	/**可以扩展的 className */
+/**Nombre de clase extensible */
 	className?: string
-	/**点击 Tab 触发的回调函数 */
+/**Función de devolución de llamada activada al hacer clic en Tabulador */
 	onSelect?: (selectedIndex: number) => void
-	/**Tabs的样式，两种可选，默认为 line */
-	type?: "line" | "card"
+/**Estilo de pestañas, dos opciones, el predeterminado es línea */	type?: "line" | "card"
 	children?: React.ReactNode
 }
-
 /**
- * 选项卡切换组件。
- * 提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
- * ### 引用方法
- *
- * ~~~js
- * import { Tabs } from 'vikingship'
- * ~~~
- */
+  * Componente de cambio de pestaña.
+  * Proporcione un área horizontal para almacenar y mostrar grandes piezas de contenido para mantener limpia la interfaz.
+  * ### método de referencia
+  *
+  *~~~js
+  * importar {pestañas} de 'gapshiship'
+  * ~~~
+  */
 export const Tabs: FC<TabsProps> = (props) => {
 	const { defaultIndex, className, onSelect, children, type } = props
 	const [activeIndex, setActiveIndex] = useState(defaultIndex)
@@ -37,7 +35,7 @@ export const Tabs: FC<TabsProps> = (props) => {
 			}
 		}
 	}
-	const navClass = classNames("viking-tabs-nav", {
+	const navClass = classNames("gapsi-tabs-nav", {
 		"nav-line": type === "line",
 		"nav-card": type === "card",
 	})
@@ -45,7 +43,7 @@ export const Tabs: FC<TabsProps> = (props) => {
 		return React.Children.map(children, (child, index) => {
 			const childElement = child as FunctionComponentElement<TabItemProps>
 			const { label, disabled } = childElement.props
-			const classes = classNames("viking-tabs-nav-item", {
+			const classes = classNames("gapsi-tabs-nav-item", {
 				"is-active": activeIndex === index,
 				disabled: disabled,
 			})
@@ -70,9 +68,9 @@ export const Tabs: FC<TabsProps> = (props) => {
 		})
 	}
 	return (
-		<div className={`viking-tabs ${className}`}>
+		<div className={`gapsi-tabs ${className}`}>
 			<ul className={navClass}>{renderNavLinks()}</ul>
-			<div className="viking-tabs-content">{renderContent()}</div>
+			<div className="gapsi-tabs-content">{renderContent()}</div>
 		</div>
 	)
 }
