@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes, ReactElement} from 'react'
+import { ChangeEvent, forwardRef, InputHTMLAttributes, ReactElement} from 'react'
 import {IconProp} from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon';
 import classNames from 'classnames';
@@ -10,6 +10,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>,'size'
   icon?:IconProp;
   prepend?: string | ReactElement;
   append?:string|ReactElement;
+  onChange?:(e:ChangeEvent<HTMLInputElement>)=>void
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
@@ -53,3 +54,4 @@ if('value' in props) {
   </div>
   )
 })
+export default Input;

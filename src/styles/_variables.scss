@@ -315,3 +315,15 @@ $nav-tabs-link-active-color:        $primary !default;
 $nav-tabs-link-active-bg:           $body-bg !default;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
 $nav-tabs-content-margin:           1rem !default;
+
+// Columns
+$grid-columns: 12;
+$grid-gutter: 1rem;
+
+$sizes: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

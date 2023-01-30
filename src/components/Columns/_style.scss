@@ -1,10 +1,16 @@
-$column-gap: 0.75rem !default;
+$column-gap: 0.45rem !default;
 
 .columns {
+
+  @media screen and (max-width: 482px),
+  print {
+    display: block;
+  }
+
   display: flex;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-top: -0.75rem;
+  // margin-left: -0.75rem;
+  // margin-right: -0.75rem;
+  // margin-top: -0.75rem;
 
   &:last-child {
     margin-bottom: -0.75rem;
@@ -29,63 +35,73 @@ $column-gap: 0.75rem !default;
   flex-grow: 1;
   flex-shrink: 1;
   padding: $column-gap;
-  
-  &.is-full{
+
+  &.is-full {
     flex: none;
     width: 100%;
   }
-  
-  @media screen and (min-width: 769px){
+
+  @media screen and (min-width: 769px) {
     &.is-1 {
-    flex: none;
-    width: 8.33333%;
+      flex: none;
+      width: 8.33333%;
     }
-    &.is-2{
+
+    &.is-2 {
       flex: none;
       width: 16.66667%;
     }
-    &.is-3{
+
+    &.is-3 {
       flex: none;
       width: 25%;
     }
-    &.is-4{
+
+    &.is-4 {
       flex: none;
       width: 33.33333%;
     }
-    &.is-5{
-     flex: none;
-    width: 41.66667%;
+
+    &.is-5 {
+      flex: none;
+      width: 41.66667%;
     }
-    &.is-6{
-         flex: none;
-    width: 50%;
-  }
-    
-    &.is-7{
+
+    &.is-6 {
+      flex: none;
+      width: 50%;
+    }
+
+    &.is-7 {
       flex: none;
       width: 58.33333%;
-  
+
     }
-    &.is-8{
+
+    &.is-8 {
       flex: none;
-    width: 66.66667%;
+      width: 66.66667%;
     }
-    &.is-9{
+
+    &.is-9 {
       flex: none;
       width: 75%;
     }
-    &.is-10{
+
+    &.is-10 {
       flex: none;
       width: 83.33333%;
     }
-    &.is-11{
+
+    &.is-11 {
       flex: none;
       width: 91.66667%;
     }
-    &.is-12{
-      
-    flex: none;
-    width: 100%;
+
+    &.is-12 {
+
+      flex: none;
+      width: 100%;
 
     }
   }

@@ -1,0 +1,17 @@
+.styledGCDecisionTree{
+  width: 100% !important;
+	max-width: 100% !important;
+	max-height: 60rem;
+	
+	overflow:scroll;
+}
+.portDefaultOuter{
+  
+  width: 24px;
+  height: 24px;
+  background: cornflowerblue;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

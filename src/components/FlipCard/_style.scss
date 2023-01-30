@@ -1,0 +1,66 @@
+
+.flipCard-container {
+  perspective: 1000px;
+  cursor: pointer;
+    margin: 0.5rem 0 1rem 0;
+  position: relative;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  // border-radius: 2px;
+  border-radius: 25px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  overflow: hidden;
+  color: #303133;
+  transition: .3s;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+
+
+/* flip the pane when hovered */
+
+.flipCard-container.flipped .flipCard {
+  transform: rotateY(180deg);
+}
+
+/*.card-container,
+.front,
+.back {
+  width: 320px;
+  height: 480px;
+}
+*/
+
+/* flip speed goes here */
+
+.flipCard {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+
+/* hide back of pane during swap */
+
+.front,.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+
+.front div, .back div {
+  flex: 1;
+}
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+.back {
+  transform: rotateY(180deg);
+}

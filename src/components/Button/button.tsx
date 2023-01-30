@@ -36,7 +36,6 @@ export const Button: FC<ButtonProps> = (props) => {
     href,
     ...restProps
   } = props
-  // btn, btn-lg, btn-primary
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,

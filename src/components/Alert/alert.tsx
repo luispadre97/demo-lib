@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react"
+import React, { FC, ReactNode, useState } from "react"
 import classNames from "classnames"
 import Icon from "../Icon"
 import Transition from "../Transition"
@@ -15,18 +15,19 @@ export interface AlertProps {
 	onClose?: () => void
 	/** Si mostrar el icono de cerrar */
 	closable?: boolean
+	children?:ReactNode
 }
 /**
  * Se utiliza para mostrar información importante sobre avisos en la página. Haga clic en la cruz a la derecha y el aviso desaparecerá automáticamente
  * ### método de referencia
  *
  *~~~js
- * importar {Alerta} de 'gapshiship'
+ * importar {Alert} de 'gapshiship'
  * ~~~
  */
 export const Alert: FC<AlertProps> = (props) => {
 	const [hide, setHide] = useState(false)
-	const { title, description, type, onClose, closable } = props
+	const { title, description, type, onClose, closable,children } = props
 	const classes = classNames("gapsi-alert", {
 		[`gapsi-alert-${type}`]: type,
 	})
@@ -42,8 +43,9 @@ export const Alert: FC<AlertProps> = (props) => {
 	return (
 		<Transition in={!hide} timeout={300} animation="zoom-in-top">
 			<div className={classes}>
-				<span className={titleClass}>{title}</span>
-				{description && <p className="gapsi-alert-desc">{description}</p>}
+			{children?children:<span className={titleClass}>{title}</span>}
+				
+				{children?<></>:description && <p className="gapsi-alert-desc">{description}</p>}
 				{closable && (
 					<span className="gapsi-alert-close" onClick={handleClose}>
 						<Icon icon="times" />
@@ -59,3 +61,5 @@ Alert.defaultProps = {
 	closable: true,
 }
 export default Alert
+
+

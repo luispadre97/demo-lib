@@ -1,0 +1,122 @@
+$color_1: rgba(0, 0, 0, 0.85);
+$color_2: #fff;
+.gapsi-avatar {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	// color: $color_1;
+	font-size: 14px;
+	font-variant: tabular-nums;
+	// line-height: 1.5715;
+	list-style: none;
+	font-feature-settings: 'tnum';
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	color: $color_2;
+	white-space: nowrap;
+	text-align: center;
+	vertical-align: middle;
+	background: #ccc;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 50%;
+	.gapsi-image-img {
+		display: block;
+	}
+	>img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+}
+.gapsi-avatar-image {
+	background: transparent;
+}
+.gapsi-avatar-string {
+	position: absolute;
+	left: 50%;
+	transform-origin: 0 center;
+}
+.gapsi-avatar.gapsi-avatar-icon {
+	font-size: 18px;
+	>.anticon {
+		margin: 0;
+	}
+}
+.gapsi-avatar-lg {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+}
+.gapsi-avatar-lg-string {
+	position: absolute;
+	left: 50%;
+	transform-origin: 0 center;
+}
+.gapsi-avatar-lg.gapsi-avatar-icon {
+	font-size: 24px;
+	>.anticon {
+		margin: 0;
+	}
+}
+.gapsi-avatar-sm {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 50%;
+}
+.gapsi-avatar-sm-string {
+	position: absolute;
+	left: 50%;
+	transform-origin: 0 center;
+}
+.gapsi-avatar-sm.gapsi-avatar-icon {
+	font-size: 14px;
+	>.anticon {
+		margin: 0;
+	}
+}
+.gapsi-avatar-square {
+	border-radius: 2px;
+}
+.gapsi-avatar-group {
+	display: inline-flex;
+	.gapsi-avatar {
+		border: 1px solid #fff;
+		&:not(:first-child) {
+			margin-left: -8px;
+		}
+	}
+}
+.gapsi-avatar-group-popover {
+	.gapsi-avatar {
+		+ {
+			.gapsi-avatar {
+				margin-left: 3px;
+			}
+		}
+	}
+}
+.gapsi-avatar-group-rtl {
+	.gapsi-avatar {
+		&:not(:first-child) {
+			margin-right: -8px;
+			margin-left: 0;
+		}
+	}
+}
+.gapsi-avatar-group-popover.gapsi-popover-rtl {
+	.gapsi-avatar {
+		+ {
+			.gapsi-avatar {
+				margin-right: 3px;
+				margin-left: 0;
+			}
+		}
+	}
+}

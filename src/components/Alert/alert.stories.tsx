@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory, storiesOf } from "@storybook/react"
+import { ComponentMeta, ComponentStory } from "@storybook/react"
 import Alert from "./alert"
 import { action } from "@storybook/addon-actions"
 
@@ -8,9 +8,9 @@ const Template: ComponentStory<typeof Alert> = (args) => (
 const stylesAlert: ComponentStory<typeof Alert> = () => {
 	return (
 		<>
-			<Alert title="this is Success" type="success"></Alert>
-			<Alert title="this is Danger!" type="danger"></Alert>
-			<Alert title="this is Warning!" type="warning" closable={false}></Alert>
+			<Alert title="esto es una alerta de tipo Success" type="success"></Alert>
+			<Alert title="esto es una alerta de tipo Danger!" type="danger"></Alert>
+			<Alert title="esto es una alerta de tipo Warning!" type="warning" closable={false}></Alert>
 		</>
 	)
 }
@@ -25,7 +25,7 @@ const descAlert: ComponentStory<typeof Alert> = () => {
 	)
 }
 export default {
-	title: "Alert",
+	title: "Componente/Alert",
 	component: Alert,
 } as ComponentMeta<typeof Alert>
 
@@ -37,6 +37,6 @@ export const descAlertF = descAlert.bind({})
 stylesAlertF.storyName = "Alertas en diferentes estilos."
 
 DefaultAlert.args = {
-	title: "this is alert!",
+	title: "esto es una alerta!",
 }
 DefaultAlert.storyName = "Alert sucess"

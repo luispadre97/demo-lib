@@ -5,7 +5,7 @@ import SubMenu from "./subMenu";
 import Item from "./menuItem";
 
 const menuMeta: ComponentMeta<typeof Menu> = {
-    title: 'Menu',
+    title: 'Componente/Menu',
     id: 'Menu',
     component: Menu,
     subcomponents: { 'SubMenu': SubMenu, 'Item': Item },
