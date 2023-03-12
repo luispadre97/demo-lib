@@ -13,6 +13,7 @@ ADefault.args = {
 	children: "Default Card",
 	width: 350,
 	height: 250,
+	shadow: "dark",
 }
 
 ADefault.decorators = [

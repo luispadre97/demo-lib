@@ -17,7 +17,7 @@ export const Exmaple = () => {
 				Modals
 			</Button>
 			<Modal
-				onCancel={() => setShowModal(true)}
+				onCancel={() => setShowModal(false)}
 				onOk={() => setShowModal(false)}
 				open={showModal}
 				animation="zoom-in-left"

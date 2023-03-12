@@ -26,9 +26,9 @@ import { Columns } from "../Columns/colums"
 import { Column } from "../Columns/column"
 import Form from "../Form/form"
 import FormItem from "../Form/formItem"
-import { Input } from "../Input/input"
+
+import InputM from "../Input/Input.Material"
 import Button from "../Button"
-import { CCInput } from "./CCInput"
 
 const defaultProps: any = {
 	name: "",
@@ -69,8 +69,8 @@ export const CreditCard: FC<CreditCardProps> = (props) => {
 	return (
 		<div className={classes}>
 			<FlipCard
-				back={<Back {...{ data }} />}
-				front={<Front {...{ data }} />}
+				backContent={<Back {...{ data }} />}
+				frontContent={<Front {...{ data }} />}
 			></FlipCard>
 			<Columns>
 				<Column className="is-4">
@@ -89,13 +89,13 @@ export const CreditCard: FC<CreditCardProps> = (props) => {
 							</div>
 						</FormItem>
 						<FormItem name="userCard" label="Nombre del Usuario:">
-							<CCInput />
+							<InputM />
 						</FormItem>
 						<FormItem name="NumberCard" label="Numero de Tarjeta:">
-							<CCInput />
+							<InputM />
 						</FormItem>
 						<FormItem name="cvv" label="CVV:">
-							<CCInput />
+							<InputM />
 						</FormItem>
 						<Button type="submit" btnType="primary">
 							iniciar sesión
@@ -117,16 +117,6 @@ const Front = (props: any) => (
 				height: 40,
 			}}
 			src={ImgBank}
-		/>
-		<img
-			style={{
-				position: "absolute",
-				top: 15,
-				right: 15,
-				width: 60,
-				height: 40,
-			}}
-			src={Icons["american_express"]}
 		/>
 
 		<Text

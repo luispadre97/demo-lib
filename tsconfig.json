@@ -23,6 +23,6 @@
   "exclude": [
     "**/*.spec.ts"
   ],
-  "include": ["src"],
+  "include": ["src", "base.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

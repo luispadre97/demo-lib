@@ -1,47 +1,83 @@
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fas } from "@fortawesome/free-solid-svg-icons"
-import Menu from "./components/Menu/menu"
-import MenuItem from "./components/Menu/menuItem"
-import SubMenu from "./components/Menu/subMenu"
-import Icon from "./components/Icon/icon"
-import React, { useEffect, useRef, useState } from "react"
-import Button from "./components/Button/button"
-import Transition from "./components/Transition/transition"
-import Alert from "./components/Alert"
-import Tabs from "./components/Tabs/tabs"
-import TabItem from "./components/Tabs/tabItem"
-import { Chip } from "./components/Chip/chip"
-import { Empty } from "./components/Empty/empty "
-import { Text } from "./components/Text/text"
-import { Columns } from "./components/Columns/colums"
-import { Column } from "./components/Columns/column"
-// import "bulma/css/bulma.min.css"
-// import { Columns as ColumnsBulma } from "react-bulma-components"
-import { Input } from "./components/Input/input"
-import { Card } from "./components/Card/card"
-import { Modal } from "./components/Modal/modal"
-import { CreditCard } from "./components/CreditCard/creditCard"
-import { FlipCard } from "./components/FlipCard/flipCard"
+// import { library } from "@fortawesome/fontawesome-svg-core"
+// import { fas } from "@fortawesome/free-solid-svg-icons"
+// import Menu from "./components/Menu/menu"
+// import MenuItem from "./components/Menu/menuItem"
+// import SubMenu from "./components/Menu/subMenu"
+// import Icon from "./components/Icon/icon"
+// import React, { useEffect, useRef, useState } from "react"
+// import Button from "./components/Button/button"
+// import Transition from "./components/Transition/transition"
+// import Alert from "./components/Alert"
+// import Tabs from "./components/Tabs/tabs"
+// import TabItem from "./components/Tabs/tabItem"
+// import { Chip } from "./components/Chip/chip"
+// import { Empty } from "./components/Empty/empty "
+// import { Text } from "./components/Text/text"
+// import { Columns } from "./components/Columns/colums"
+// import { Column } from "./components/Columns/column"
+// // import "bulma/css/bulma.min.css"
+// // import { Columns as ColumnsBulma } from "react-bulma-components"
+// import { Input } from "./components/Input/input"
+// import { Card } from "./components/Card/card"
+// import { Modal } from "./components/Modal/modal"
+// import { CreditCard } from "./components/CreditCard/creditCard"
+// import { FlipCard } from "./components/FlipCard/flipCard"
 
-import { Upload } from "./components/Upload/upload"
-import Progress from "./components/Progress"
-import { Form, IFormRef } from "./components/Form/form"
-import { FormItem } from "./components/Form/formItem"
-import { CustomRule } from "./components/Form/useStore"
-import { Tooltip } from "./components/Tooltip/tooltip"
-import ThemeLibrary from "./components/Theme/theme"
+// import { Upload } from "./components/Upload/upload"
+// import Progress from "./components/Progress"
+// import { Form, IFormRef } from "./components/Form/form"
+// import { FormItem } from "./components/Form/formItem"
+// import { CustomRule } from "./components/Form/useStore"
+// import { Tooltip } from "./components/Tooltip/tooltip"
+// import ThemeLibrary from "./components/Theme/theme"
 import { GCDecisionTree } from "./components/GCDecisionTree/gCDecisionTree"
+import KeyPress from "./tools/KeyPress/index"
 // import ColumnV from "./components/ColumnsV2/Columns"
 // import Table from "./components/Table/table"
 
-library.add(fas)
+// library.add(fas)
+import "sweetalert2/src/sweetalert2.scss"
 
+import BarChart from "./components/D3/d3"
+
+interface DatosGrafica {
+	nombre: string
+	valor: number
+}
+
+const data = [
+	{ name: "A", value: 100 },
+	{ name: "B", value: 200 },
+	{ name: "C", value: 50 },
+	{ name: "D", value: 400 },
+]
+
+const width = 500
+const height = 300
+const color = "blue"
+const textColor = "black"
+const xAxisLabel = "Letras"
+const yAxisLabel = "Valores"
+const margin = { top: 20, right: 30, bottom: 30, left: 40 }
 const App: React.FC = () => {
-	return(
+	return (
 		<>
-		<Columns>
-		<GCDecisionTree />
-		</Columns>
+			{/* <Columns> */}
+			{/* <GCDecisionTree /> */}
+			{/* <KeyPress/> */}
+			<div className="grafica-barras">
+				<BarChart
+					data={data}
+					width={width}
+					height={height}
+					color={color}
+					textColor={textColor}
+					xAxisLabel={xAxisLabel}
+					yAxisLabel={yAxisLabel}
+					margin={margin}
+				/>
+			</div>
+			{/* </Columns> */}
 		</>
 	)
 	const [title, setTitle] = useState("")
